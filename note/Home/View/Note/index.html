@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>FrankFan Note</title>
+	<link rel="stylesheet" href="__PUBLIC__/Css/index.css" />
+	<script type="text/javascript" src='__PUBLIC__/Js/jquery-1.7.2.min.js'></script>
+	<script type="text/javascript" src='__PUBLIC__/Js/index.js'></script>
+</head>
+<body>
+	<div id='top'>
+		<span id='send'></span>
+	</div>
+
+	
+	
+	<!-- 模板 -->
+	<volist name="note" id="item">
+ 	<div id='main'>
+		<dl class='paper a2'>
+			<dt>
+				<span class='username'>{$item.username}</span>
+				<span class='num'><a href="__URL__/edit/noteId/{$item.id}" title="修改">No.{$item.id}</a></span>
+			</dt>
+			<dd class='content'>{$item.content}</dd>
+			<dd class='bottom'>
+				<span class='time'>{$item.time}</span>
+				<a href="__URL__/deleteNote/noteId/{$item.id}"  onclick="return confirm('确认删除?')" title='删除这条?' class='close'></a>
+			</dd>
+		</dl>
+		 <br/>
+	</volist>
+
+	<!-- 暂时注释掉
+		<dl class='paper a2'>
+			<dt>
+				<span class='username'>樊勇</span>
+				<span class='num'>No.00001</span>
+			</dt>
+			<dd class='content'>很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用</dd>
+			<dd class='bottom'>
+				<span class='time'>今天08:30</span>
+				<a href="" class='close'></a>
+			</dd>
+		</dl>
+		<dl class='paper a3'>
+			<dt>
+				<span class='username'>樊勇</span>
+				<span class='num'>No.00001</span>
+			</dt>
+			<dd class='content'>很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用</dd>
+			<dd class='bottom'>
+				<span class='time'>今天08:30</span>
+				<a href="" class='close'></a>
+			</dd>
+		</dl>
+		<dl class='paper a4'>
+			<dt>
+				<span class='username'>樊勇</span>
+				<span class='num'>No.00001</span>
+			</dt>
+			<dd class='content'>很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用</dd>
+			<dd class='bottom'>
+				<span class='time'>今天08:30</span>
+				<a href="" class='close'></a>
+			</dd>
+		</dl>
+		<dl class='paper a5'>
+			<dt>
+				<span class='username'>樊勇</span>
+				<span class='num'>No.00001</span>
+			</dt>
+			<dd class='content'>很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用很好非常好的一个应用</dd>
+			<dd class='bottom'>
+				<span class='time'>今天08:30</span>
+				<a href="" class='close'></a>
+			</dd>
+		</dl>
+	</div>
+	-->
+
+	<div id='send-form'>
+		<p class='title'><span>TODO List</span><a href="" id='close'></a></p>
+		<form method="post" action="__URL__/addNote" name='fmNote'>
+			<p>
+				<label for="username">昵称：</label>
+				<input type="text" name='username' id='username'/>
+			</p>
+			<p>
+				<label for="content">内容：(您还可以输入&nbsp;<span id='font-num'>50</span>&nbsp;个字)</label>
+				<textarea name="content" id='content'></textarea>
+				<div id='phiz'>
+					<img src="__PUBLIC__/Images/phiz/zhuakuang.gif" alt="抓狂" />
+					<img src="__PUBLIC__/Images/phiz/baobao.gif" alt="抱抱" />
+					<img src="__PUBLIC__/Images/phiz/haixiu.gif" alt="害羞" />
+					<img src="__PUBLIC__/Images/phiz/ku.gif" alt="酷" />
+					<img src="__PUBLIC__/Images/phiz/xixi.gif" alt="嘻嘻" />
+					<img src="__PUBLIC__/Images/phiz/taikaixin.gif" alt="太开心" />
+					<img src="__PUBLIC__/Images/phiz/touxiao.gif" alt="偷笑" />
+					<img src="__PUBLIC__/Images/phiz/qian.gif" alt="钱" />
+					<img src="__PUBLIC__/Images/phiz/huaxin.gif" alt="花心" />
+					<img src="__PUBLIC__/Images/phiz/jiyan.gif" alt="挤眼" />
+				</div>
+			</p>
+			<!--<span id='send-btn'></span>-->
+			<input class="send-btn" type="submit" id="btnSubmit" value="" />
+
+		</form>
+	</div>
+<!--[if IE 6]>
+    <script type="text/javascript" src="__PUBLIC__/Js/iepng.js"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('#send,#close,.close','background');
+    </script>
+<![endif]-->
+</body>
+</html>
